@@ -1,4 +1,4 @@
-!#/usr/bin bash
+#!/usr/bin bash
 
 # Benjamin Blouin
 # 13JUL19

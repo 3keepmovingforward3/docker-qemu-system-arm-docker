@@ -26,4 +26,6 @@ The Docker container is very useful, allowing full control at image, contianer, 
 
 # Python Dependencies Setup  
 `pip install -vv --user --no-binary all typing pyyaml future cython`  
-`pip install -vv --user --no-binary all numpy scipy h5py`  
+`pip install -vv --user --no-binary all numpy scipy h5py six numpy wheel mock`  
+`pip install -vv --user --no-binary keras_applications==1.0.7 --no-deps`  
+`pip install -vv --user --no-binary keras_preprocessing==1.0.9 --no-deps`  

@@ -6,11 +6,13 @@ One caveat is not all soc features are emulatable atm, in this case the NEON fp 
 The Docker container is very useful, allowing full control at image, contianer, and container file-system access levels, even whilst a container is running. The drawbacks, in expansion of what has been expanded on previously, also include "sudo" level events, as well as cli piping especially of "apt" commands. For this reason I won't be doing any update/upgrade command scripting.  
 
 # Missing Software  
-*Toolchains*  
+*Base-Toolchains Upgrade*  
 `apt update`  
 `apt install -y software-properties-common`  
 `add-apt-repository ppa:ubuntu-toolchain-r/test`  
 `apt update`  
 `apt upgrade -y`  
+*Latest-Toolchains*  
 `apt install -y gcc-9 g++-9 gfortran-9 cloog-isl`  
+*Dev-Package-Dev*  
 `apt install -y sudo git wget curl bison flex gcc g++ gfortran python python3 libopenblas-dev libatlas-base-dev libssl-dev libmpfr-dev build-essential python-pip python3-pip libreadline-dev apt-utils liblzma-dev python-scipy libhdf5-dev`  

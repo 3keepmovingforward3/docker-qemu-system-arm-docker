@@ -18,22 +18,22 @@ The Docker container is very useful, allowing full control at image, contianer, 
 `apt install -y sudo git wget curl bison flex gcc g++ gfortran python python3 libopenblas-dev libatlas-base-dev libssl-dev   libmpfr-dev build-essential python-pip python3-pip libreadline-dev apt-utils liblzma-dev python-scipy libhdf5-dev libc-ares-dev libeigen3-dev openjdk-8-jdk openmpi-bin libopenmpi-dev libffi-dev`  
 
 # Environment Setup  
-*Toolchain Flags*  
+**Toolchain Flags**  
 *Flag Option Explanations*  
-{"export": sets global environment (env) variable;  
+"export": sets global environment (env) variable;  
 "microarchitecture": -march;  
 "microarchitecture tuning" -mtune;  
 "micro-floating-point-unit": -mfpu;  
 "-march big/little endian msb/lsb": -mlittle-endian;  
 "IEEE non-compliant compiler optimizations": -Ofast;  
-"pipe output (-o) files instead of writing to disk": -pipe}  
+"pipe output (-o) files instead of writing to disk": -pipe  
 `export CFLAGS="-march=armv7a-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -Ofast -pipe"`  
 `export CXXFLAGS="-march=armv7a-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -Ofast -pipe"`  
 `export CC="gcc-9"`  
 `export CXX="g++-9"`  
 
 # Python Dependencies Setup 
-*Python Package Manger Flags*  
+**Python Package Manger Flags**  
 *Flag Option Explanations*  
 "verbosity level": -v -vv -vvv; "install under user": --user; "compile from source": --no-binary all; "specific version": *==1.0.*;  
 `pip install -vv --user --no-binary all typing pyyaml future cython scipy h5py six numpy wheel mock`  

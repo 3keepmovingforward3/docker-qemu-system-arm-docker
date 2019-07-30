@@ -15,17 +15,16 @@ The Docker container is very useful, allowing full control at image, contianer, 
 *Latest-Toolchains*  
 `apt install -y gcc-9 g++-9 gfortran-9 cloog-isl`  
 *Dev-Package-Dev*  
-`apt install -y sudo git wget curl bison flex gcc g++ gfortran python python3 libopenblas-dev libatlas-base-dev libssl-dev   libmpfr-dev build-essential python-pip python3-pip libreadline-dev apt-utils liblzma-dev python-scipy libhdf5-dev libc-ares-dev libeigen3-dev openjdk-8-jdk openmpi-bin libopenmpi-dev`  
+`apt install -y sudo git wget curl bison flex gcc g++ gfortran python python3 libopenblas-dev libatlas-base-dev libssl-dev   libmpfr-dev build-essential python-pip python3-pip libreadline-dev apt-utils liblzma-dev python-scipy libhdf5-dev libc-ares-dev libeigen3-dev openjdk-8-jdk openmpi-bin libopenmpi-dev libffi-dev`  
 
 # Environment Setup  
 *Toolchain-Flags*  
-`export CFLAGS="-march=armv7a-a -mtune=cortex-a53 -mfpu=vfpv4 -Ofast -pipe"`  
-`export CXXFLAGS="-march=armv7a-a -mtune=cortex-a53 -mfpu=vfpv4 -Ofast -pipe"`  
+Setting compilation flags that tune 
+`export CFLAGS="-march=armv7a-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -Ofast -pipe"`  
+`export CXXFLAGS="-march=armv7a-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -Ofast -pipe"`  
 `export CC="gcc-9"`  
 `export CXX="g++-9"`  
 
 # Python Dependencies Setup  
-`pip install -vv --user --no-binary all typing pyyaml future cython`  
-`pip install -vv --user --no-binary all numpy scipy h5py six numpy wheel mock`  
-`pip install -vv --user --no-binary keras_applications==1.0.7 --no-deps`  
-`pip install -vv --user --no-binary keras_preprocessing==1.0.9 --no-deps`  
+`pip install -vv --user --no-binary all typing pyyaml future cython scipy h5py six numpy wheel mock`  
+`pip install -vv --user --no-deps --no-binary all keras_applications==1.0.7 keras_preprocessing==1.0.9`    

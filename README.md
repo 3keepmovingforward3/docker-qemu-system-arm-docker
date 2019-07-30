@@ -12,4 +12,5 @@ The Docker container is very useful, allowing full control at image, contianer, 
 `add-apt-repository ppa:ubuntu-toolchain-r/test`  
 `apt update`  
 `apt upgrade -y`  
-`apt install -y sudo git wget curl bison flex gcc g++ gfortran python python3 libopenblas-dev libatlas-base-dev libssl-dev libmpfr-dev build-essential python-pip python3-pip libreadline-dev apt-utils liblzma-dev python-scipy libhdf5-dev gcc-9 g++-9 gfortran-9 cloog-isl`
+`apt install -y gcc-9 g++-9 gfortran-9 cloog-isl`  
+`apt install -y sudo git wget curl bison flex gcc g++ gfortran python python3 libopenblas-dev libatlas-base-dev libssl-dev libmpfr-dev build-essential python-pip python3-pip libreadline-dev apt-utils liblzma-dev python-scipy libhdf5-dev`  

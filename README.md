@@ -31,6 +31,11 @@ The Docker container is very useful, allowing full control at image, contianer, 
 `export CXXFLAGS="-march=armv7a-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -Ofast -pipe"`  
 `export CC="gcc-9"`  
 `export CXX="g++-9"`  
+`export USE_CUDA=0`  
+`export USE_DISTRIBUTED=0`  
+`export USE_MKLDNN=0`  
+`export USE_NNPACK=0`  
+`export USE_QNNPACK=0`  
 
 # Python Dependencies Setup 
 **Python Package Manger Flags**  

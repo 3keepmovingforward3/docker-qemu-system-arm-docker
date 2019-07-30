@@ -38,3 +38,8 @@ The Docker container is very useful, allowing full control at image, contianer, 
 "verbosity level": -v -vv -vvv; "install under user": --user; "compile from source": --no-binary all; "specific version": *==1.0.*;  
 `pip install -vv --user --no-binary all typing pyyaml future cython scipy h5py six numpy wheel mock`  
 `pip install -vv --user --no-deps --no-binary all keras_applications==1.0.7 keras_preprocessing==1.0.9`    
+
+# Pytorch Build  
+`mkdir pytorch_install && cd pytorch_install`  
+`git clone --depth=1 --recursive https://github.com/pytorch/pytorch && cd pytorch`  
+`time python setup.py bdist_wheel` or `time python3 setup.py bdist_wheel`  

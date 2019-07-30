@@ -47,4 +47,6 @@ The Docker container is very useful, allowing full control at image, contianer, 
 # Pytorch Build  
 `mkdir pytorch_install && cd pytorch_install`  
 `git clone --depth=1 --recursive https://github.com/pytorch/pytorch && cd pytorch`  
-`time python setup.py bdist_wheel` or `time python3 setup.py bdist_wheel`  
+`time python setup.py bdist_wheel`  
+or  
+`time python3 setup.py bdist_wheel`  

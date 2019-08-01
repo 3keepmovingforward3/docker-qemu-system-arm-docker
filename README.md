@@ -36,6 +36,7 @@ The Docker container is very useful, allowing full control at image, contianer, 
 `export USE_MKLDNN=0`  
 `export USE_NNPACK=0`  
 `export USE_QNNPACK=0`  
+`export MAX_JOBS=$(nproc)`  
 
 # Python Dependencies Setup 
 **Python Package Manger Flags**  

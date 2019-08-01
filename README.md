@@ -53,5 +53,6 @@ or
 `time python3 setup.py bdist_wheel`  
 
 # QEMU Error List
-**List for completeness**
+**List for completeness**  
+*All emulation messages are benign and take the form as below:*  
 qemu: Unsupported syscall: 319

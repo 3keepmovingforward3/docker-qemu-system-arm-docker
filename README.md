@@ -41,6 +41,8 @@ The Docker container is very useful, allowing full control at image, contianer, 
 **Example of how environment flags make there way into the gcc compilation command**  
 **gcc-9** -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fno-strict-aliasing **-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -Ofast -pipe** -fPIC -DH5_USE_16_API -I/tmp/pip-build-5kTuo7/h5py/lzf -I/usr/include/hdf5/serial -I/opt/local/include -I/usr/local/include -I/usr/lib/python2.7/dist-packages/numpy/core/include -I/usr/include/python2.7 -c /tmp/pip-build-5kTuo7/h5py/h5py/h5r.c -o build/temp.linux-armv7l-2.7/tmp/pip-build-5kTuo7/h5py/h5py/h5r.o  
 
+**cmake** -DBUILD_PYTHON=True -DBUILD_TEST=True -DCMAKE_BUILD_TYPE=Release **-DCMAKE_CXX_FLAGS=-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -Ofast -pipe  -DCMAKE_C_FLAGS=-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -Ofast -pipe**  -DCMAKE_EXE_LINKER_FLAGS= -DCMAKE_INSTALL_PREFIX=/pytorch_install/pytorch/torch -DCMAKE_PREFIX_PATH=/opt/ros/kinetic -DCMAKE_SHARED_LINKER_FLAGS= -DINSTALL_TEST=True -DNUMPY_INCLUDE_DIR=/usr/lib/python2.7/dist-packages/numpy/core/include -DPYTHON_EXECUTABLE=/usr/bin/python -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so.1.0 -DTORCH_BUILD_VERSION=1.2.0a0+388dc4f **-DUSE_CUDA=False -DUSE_DISTRIBUTED=False -DUSE_MKLDNN=0 -DUSE_NNPACK=0** -DUSE_NUMPY=True **-DUSE_QNNPACK=0** -DUSE_SYSTEM_EIGEN_INSTALL=OFF /pytorch_install/pytorch  
+
 # Python Dependencies Setup 
 **Python Package Manger Flags**  
 *Flag Option Explanations*  

@@ -59,3 +59,7 @@ or
 **List for completeness**  
 *All emulation messages are benign and take the form as below:*  
 qemu: Unsupported syscall: 319
+
+# References
+1.  ARM GCC Compiler Info: http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.100748_0606_00_en/fnb1472741490155.html  
+2.  GCC Compiler Optimization Options That Control Optimization: https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html

@@ -38,8 +38,8 @@ The Docker container is very useful, allowing full control at image, contianer, 
 `export USE_QNNPACK=0`  
 `export MAX_JOBS=$(nproc)`  
   
-**Example of how environment flags make there way into the compilation command**  
-gcc-9 -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fno-strict-aliasing **-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -Ofast -pipe** -fPIC -DH5_USE_16_API -I/tmp/pip-build-5kTuo7/h5py/lzf -I/usr/include/hdf5/serial -I/opt/local/include -I/usr/local/include -I/usr/lib/python2.7/dist-packages/numpy/core/include -I/usr/include/python2.7 -c /tmp/pip-build-5kTuo7/h5py/h5py/h5r.c -o build/temp.linux-armv7l-2.7/tmp/pip-build-5kTuo7/h5py/h5py/h5r.o  
+**Example of how environment flags make there way into the gcc compilation command**  
+**gcc-9** -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fno-strict-aliasing **-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -Ofast -pipe** -fPIC -DH5_USE_16_API -I/tmp/pip-build-5kTuo7/h5py/lzf -I/usr/include/hdf5/serial -I/opt/local/include -I/usr/local/include -I/usr/lib/python2.7/dist-packages/numpy/core/include -I/usr/include/python2.7 -c /tmp/pip-build-5kTuo7/h5py/h5py/h5r.c -o build/temp.linux-armv7l-2.7/tmp/pip-build-5kTuo7/h5py/h5py/h5r.o  
 
 # Python Dependencies Setup 
 **Python Package Manger Flags**  

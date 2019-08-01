@@ -60,7 +60,7 @@ The Docker container is very useful, allowing full control at image, contianer, 
 `pip install -vv --user --no-deps --no-binary all keras_applications==1.0.7 keras_preprocessing==1.0.9`    
 
 # Pytorch Build  
-*Time to completion ≃ 160 min*  
+*Time to completion Python2 ≃ 160 min*  
 `mkdir pytorch_install && cd pytorch_install`  
 `git clone --depth=1 --recursive https://github.com/pytorch/pytorch && cd pytorch`  
 `time python setup.py bdist_wheel`  
@@ -76,6 +76,8 @@ or
 `sudo tar xf save.tar -C ~/save`  
 `sudo chown -hR $USER save/`
 *The wheel file can be found in the 'dists' folder; e.g. ~/pytorch_install/pytorch/dist*  
+*Instrallation*  
+`pip install --user torch-1.2.0a0+388dc4f-cp27-cp27mu-linux_armv7l.whl`  
 
 # QEMU Error List
 **List for completeness**  

@@ -9,7 +9,7 @@ The Docker container is very useful, allowing full control at image, contianer, 
 **Required host-system software**  
 `sudo apt update && sudo apt upgrade -y`  
 `sudo apt install -y qemu-system-arm docker.io`  
-*Docker should not be run as sudo/su; we will add a docker group, and add the current user as group member*
+*Docker should not be run as sudo/su; we will add a docker group, and add the current user as group member*  
 `sudo groupadd docker`  
 `sudo usermod -aG docker $USER`  
 *Logout/login*  

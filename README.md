@@ -13,6 +13,7 @@ The Docker container is very useful, allowing full control at image, contianer, 
 `sudo groupadd docker`  
 `sudo usermod -aG docker $USER`  
 *Logout/login*  
+`docker run -v /usr/bin/qemu-arm-static:/usr/bin/qemu-arm-static --rm -ti arm32v7/ros:kinetic-ros-base-xenial`  
 
 # Missing Software  
 **Base-Toolchains Upgrade**  

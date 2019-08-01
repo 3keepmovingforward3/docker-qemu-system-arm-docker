@@ -51,3 +51,7 @@ The Docker container is very useful, allowing full control at image, contianer, 
 `time python setup.py bdist_wheel`  
 or  
 `time python3 setup.py bdist_wheel`  
+
+# QEMU Error List
+**List for completeness**
+qemu: Unsupported syscall: 319

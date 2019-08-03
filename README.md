@@ -25,7 +25,7 @@ The Docker container is very useful, allowing full control at image, contianer, 
 *Latest-Toolchains*  
 `apt install -y gcc-9 g++-9 gfortran-9 cloog-isl`  
 *Dev-Package-Dev*  
-`apt install -y sudo git wget curl bison flex gcc g++ gfortran python python3 libopenblas-dev libatlas-base-dev libssl-dev   libmpfr-dev build-essential python-pip python3-pip libreadline-dev apt-utils liblzma-dev python-scipy libhdf5-dev libc-ares-dev libeigen3-dev openjdk-8-jdk openmpi-bin libopenmpi-dev libffi-dev cython python3-yaml libblas-dev cmake cython python3-dev python3-yaml python3-setuptools checkinstall`  
+`apt install -y sudo git wget curl bison flex gcc g++ gfortran python python3 libopenblas-dev libatlas-base-dev libssl-dev   libmpfr-dev build-essential python-pip python3-pip libreadline-dev apt-utils texinfo liblzma-dev python-scipy libhdf5-dev libc-ares-dev libeigen3-dev openjdk-8-jdk openmpi-bin libopenmpi-dev libffi-dev cython python3-yaml libblas-dev cmake cython python3-dev python3-yaml python3-setuptools checkinstall`  
 
 # Environment Setup  
 **Toolchain Flags**  

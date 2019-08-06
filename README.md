@@ -33,8 +33,9 @@ The Docker container is very useful, allowing full control at image, contianer, 
 "export": sets global environment (env) variable;  
 "microarchitecture": -march;  
 "microarchitecture tuning" -mtune;  
-"micro-floating-point-unit": -mfpu;  
+"march-floating-point-unit": -mfpu;  
 "-march big/little endian msb/lsb": -mlittle-endian;  
+"Specifies which floating-point ABI to use": -mfloat-abi=hard
 "IEEE non-compliant compiler optimizations": -Ofast;  
 "pipe output (-o) files instead of writing to disk": -pipe  
 `export CFLAGS="-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -mfloat-abi=hard -Ofast -pipe"`  

@@ -37,8 +37,8 @@ The Docker container is very useful, allowing full control at image, contianer, 
 "-march big/little endian msb/lsb": -mlittle-endian;  
 "IEEE non-compliant compiler optimizations": -Ofast;  
 "pipe output (-o) files instead of writing to disk": -pipe  
-`export CFLAGS="-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -Ofast -pipe"`  
-`export CXXFLAGS="-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -Ofast -pipe"`  
+`export CFLAGS="-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -mfloat-abi=hard -Ofast -pipe"`  
+`export CXXFLAGS="-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -mfloat-abi=hard -Ofast -pipe"`  
 `export CC="gcc-9"`  
 `export CXX="g++-9"`  
 `export USE_CUDA=0`  

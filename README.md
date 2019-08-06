@@ -7,11 +7,11 @@ The Docker container is very useful, allowing full control at image, contianer, 
 
 # Running Docker Container
 **Required host-system software**  
-`sudo apt update && sudo apt upgrade -y`  
-`sudo apt install -y qemu-system-arm docker.io`  
+`apt update && apt upgrade -y`  
+`apt install -y qemu-system-arm docker.io`  
 *Docker should not be run as sudo/su; we will add a docker group, and add the current user as group member*  
-`sudo groupadd docker`  
-`sudo usermod -aG docker $USER`  
+`groupadd docker`  
+`usermod -aG docker $USER`  
 *Logout/login*  
 `docker run -v /usr/bin/qemu-arm-static:/usr/bin/qemu-arm-static --rm -ti arm32v7/ros:kinetic-ros-base-xenial`  
 

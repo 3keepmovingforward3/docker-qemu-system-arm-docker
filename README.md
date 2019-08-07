@@ -36,15 +36,21 @@ docker run -v /usr/bin/qemu-arm-static:/usr/bin/qemu-arm-static --rm -ti arm32v7
 
 # Missing Software  
 **Base-Toolchains Upgrade**  
-`apt update`  
-`apt install -y software-properties-common apt-utils`  
-`add-apt-repository ppa:ubuntu-toolchain-r/test`  
-`apt update`  
-`apt upgrade -y`  
+```
+apt update`  
+apt install -y software-properties-common apt-utils  
+add-apt-repository ppa:ubuntu-toolchain-r/test  
+apt update  
+apt upgrade -y
+```
 *Latest-Toolchains*  
-`apt install -y gcc-9 g++-9 gfortran-9 cloog-isl`  
+```
+apt install -y gcc-9 g++-9 gfortran-9 cloog-isl  
+```
 *Dev-Package-Dev*  
-`apt install -y sudo git wget curl bison flex gcc g++ gfortran cmake libgmp-dev libmpc-dev libmpfr-dev build-essential python python3 libopenblas-dev libatlas-base-dev libssl-dev cython python-pip python3-pip python3-dev python3-yaml python3-setuptools python-yaml libreadline-dev texinfo libusb-dev libsnappy-dev liblzma-dev python-scipy libhdf5-dev libc-ares-dev libeigen3-dev libblas-dev openjdk-8-jdk openmpi-bin libopenmpi-dev libffi-dev cmake checkinstall`  
+```
+apt install -y sudo git wget curl bison flex gcc g++ gfortran cmake libgmp-dev libmpc-dev libmpfr-dev build-essential python python3 libopenblas-dev libatlas-base-dev libssl-dev cython python-pip python3-pip python3-dev python3-yaml python3-setuptools python-yaml libreadline-dev texinfo libusb-dev libsnappy-dev liblzma-dev python-scipy libhdf5-dev libc-ares-dev libeigen3-dev libblas-dev openjdk-8-jdk openmpi-bin libopenmpi-dev libffi-dev cmake checkinstall  
+```
 
 # Environment Setup  
 **Toolchain Flags**  
@@ -57,28 +63,35 @@ docker run -v /usr/bin/qemu-arm-static:/usr/bin/qemu-arm-static --rm -ti arm32v7
 "Specifies which floating-point ABI to use": -mfloat-abi=hard  
 "IEEE non-compliant compiler optimizations": -Ofast;  
 "pipe output (-o) files instead of writing to disk": -pipe  
-`export CFLAGS="-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -mfloat-abi=hard -Ofast -pipe"`  
-`export CXXFLAGS="-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -mfloat-abi=hard -Ofast -pipe"`  
-`export CC="gcc-9"`  
-`export CXX="g++-9"`  
-`export USE_CUDA=0`  
-`export USE_DISTRIBUTED=0`  
-`export USE_MKLDNN=0`  
-`export USE_NNPACK=0`  
-`export USE_QNNPACK=0`  
-`export MAX_JOBS=$(nproc)`  
-  
+```
+export CFLAGS="-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -mfloat-abi=hard -Ofast -pipe"  
+export CXXFLAGS="-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -mfloat-abi=hard -Ofast -pipe"  
+export CC="gcc-9"  
+export CXX="g++-9"  
+export USE_CUDA=0  
+export USE_DISTRIBUTED=0  
+export USE_MKLDNN=0  
+export USE_NNPACK=0  
+export USE_QNNPACK=0  
+export MAX_JOBS=$(nproc)  
+``` 
+
 **Example of how environment flags make there way into the gcc compilation command**  
+
 **gcc-9** -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fno-strict-aliasing **-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -Ofast -pipe** -fPIC -DH5_USE_16_API -I/tmp/pip-build-5kTuo7/h5py/lzf -I/usr/include/hdf5/serial -I/opt/local/include -I/usr/local/include -I/usr/lib/python2.7/dist-packages/numpy/core/include -I/usr/include/python2.7 -c /tmp/pip-build-5kTuo7/h5py/h5py/h5r.c -o build/temp.linux-armv7l-2.7/tmp/pip-build-5kTuo7/h5py/h5py/h5r.o  
+
 **Example of how environment flags make there way into the cmake compilation command**  
+
 **cmake** -DBUILD_PYTHON=True -DBUILD_TEST=True -DCMAKE_BUILD_TYPE=Release **-DCMAKE_CXX_FLAGS=-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -Ofast -pipe  -DCMAKE_C_FLAGS=-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -Ofast -pipe**  -DCMAKE_EXE_LINKER_FLAGS= -DCMAKE_INSTALL_PREFIX=/pytorch_install/pytorch/torch -DCMAKE_PREFIX_PATH=/opt/ros/kinetic -DCMAKE_SHARED_LINKER_FLAGS= -DINSTALL_TEST=True -DNUMPY_INCLUDE_DIR=/usr/lib/python2.7/dist-packages/numpy/core/include -DPYTHON_EXECUTABLE=/usr/bin/python -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so.1.0 -DTORCH_BUILD_VERSION=1.2.0a0+388dc4f **-DUSE_CUDA=False -DUSE_DISTRIBUTED=False -DUSE_MKLDNN=0 -DUSE_NNPACK=0** -DUSE_NUMPY=True **-DUSE_QNNPACK=0** -DUSE_SYSTEM_EIGEN_INSTALL=OFF /pytorch_install/pytorch  
 
 # Python Dependencies Setup 
 **Python Package Manger Flags**  
 *Flag Option Explanations*  
 "verbosity level": -v -vv -vvv; "install under user": --user; "compile from source": --no-binary all; "specific version": *==1.0.*;  
-`time pip install -vv --user --no-binary all typing pyyaml future cython scipy h5py six numpy wheel mock`  
-`pip install -vv --user --no-deps --no-binary all keras_applications==1.0.7 keras_preprocessing==1.0.9`    
+```
+time pip install -vv --user --no-binary all typing pyyaml future cython scipy h5py six numpy wheel mock  
+pip install -vv --user --no-deps --no-binary all keras_applications==1.0.7 keras_preprocessing==1.0.9     
+```
 
 # Pytorch Build  
 *Time to completion Python2 ≃ 160 min*  
@@ -92,10 +105,12 @@ or
 **Need enough free diskspace on host-system to have an entire copy of build-system filesystem**
 `docker ps -a`
 *Find the container id for the system you have been developing in; export command saves to STDOUT*  
-`docker export 8916fff1a7c8 > save.tar`  
-`mkdir ~/save`  
-`sudo tar xf save.tar -C ~/save`  
-`sudo chown -hR $USER save/`
+```
+docker export 8916fff1a7c8 > save.tar  
+mkdir ~/save  
+sudo tar xf save.tar -C ~/save  
+sudo chown -hR $USER save/
+```
 *The wheel file can be found in the 'dists' folder; e.g. ~/pytorch_install/pytorch/dist*  
 *Instrallation*  
 `pip install --user torch-1.2.0a0+388dc4f-cp27-cp27mu-linux_armv7l.whl`  

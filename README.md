@@ -2,8 +2,19 @@
 Arm python dev qemu-system-arm Docker Container  
 
 The Raspberry Pi™ is good at many things, but it is very slow at compiling from source. It is to our advantage to emulate the arm32v7 instuction set on a faster cpu, because even running the emulation in a VM will be many orders of magnitude faster than host-system source compilations.  Wrining out as much performance as possible is needed to increase the charactersitics needed for any applcation, if not especially realtime (RTOS) and near-realtime (rt-patched kernel/linux userland) systems. Increased compilation speeds lead another advantage, most Python dependencies can be compiled from source with optimization flags enabled that would normally fall outside effecient use of time for compilation.  
-One caveat is not all soc features are emulatable atm, in this case the NEON fp instructions. So the -mfpu= floating-point modification flag can not include neon; i.e. -march=vfpv4 is okay, but -march=neon-vfpv4 would fail to compile. This is due to limitations in the qemu system emulator; on the up side, NEON instructions are instructions-per-clock (ipc)delta volatile, where vfpv4 instructions are less so. This, we hope, can have a lower latency, more realtime system.  
+One caveat is not all soc features are emulatable atm, in this case the NEON fp instructions. So the -mfpu= floating-point modification flag can not include neon; i.e. -march=vfpv4 is okay, but -march=neon-vfpv4 would fail to compile. This is due to limitations in the qemu system emulator; on the up side, NEON instructions are instructions-per-clock (ipc)delta volatile, where vfpv4 instructions are less so. This, we hope, can have a lower latency, more realtime system.
 The Docker container is very useful, allowing full control at image, contianer, and container file-system access levels, even whilst a container is running. The drawbacks, in expansion of what has been expanded on previously, also include "sudo" level events, as well as cli piping especially of "apt" commands. For this reason I won't be doing any update/upgrade command scripting.  
+
+# Base Dev System  
+Processor: AMD Ryzen 2/3 | Intel Skylake/Coffeelake  
+16GB DDR RAM  
+500GB+ NVMe/SSD Storage  
+Virtualization software (VirtualBox/VMWare/Parallels etc...)  
+Ubuntu-Based Linux Distribution (distro)  
+*Aside*  
+*Of course, one can use a differnt base OS; Because of Ubuntu's expansive presence and PPA reposotories(repos), Lubuntu 19.04 was specifically chosen for the following qualities: Lower desktop cpu/mem/storage usage by virtue of being a smaller OS image and using less hardware resources; Ubuntu base gives easy access to a multitude of prepackaged application repos, saving time.
+This OS was also chosen because other projects related to this walkthrough are also Ubuntu based. Docker could
+run cross-linux-host-OS, e.g. Virtualized Slackeware running an Arch-based Docker container.*  
 
 # Running Docker Container
 **Required host-system software**  

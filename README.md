@@ -18,14 +18,14 @@ The Docker container is very useful, allowing full control at image, contianer, 
 # Missing Software  
 **Base-Toolchains Upgrade**  
 `apt update`  
-`apt install -y software-properties-common`  
+`apt install -y software-properties-common apt-utils`  
 `add-apt-repository ppa:ubuntu-toolchain-r/test`  
 `apt update`  
 `apt upgrade -y`  
 *Latest-Toolchains*  
 `apt install -y gcc-9 g++-9 gfortran-9 cloog-isl`  
 *Dev-Package-Dev*  
-`apt install -y sudo git wget curl bison flex gcc g++ gfortran cmake libgmp-dev libmpc-dev libmpfr-dev build-essential python python3 libopenblas-dev libatlas-base-dev libssl-dev cython python-pip python3-pip python3-dev python3-yaml python3-setuptools python-yaml libreadline-dev apt-utils texinfo libusb-dev libsnappy-dev liblzma-dev python-scipy libhdf5-dev libc-ares-dev libeigen3-dev libblas-dev openjdk-8-jdk openmpi-bin libopenmpi-dev libffi-dev cmake checkinstall`  
+`apt install -y sudo git wget curl bison flex gcc g++ gfortran cmake libgmp-dev libmpc-dev libmpfr-dev build-essential python python3 libopenblas-dev libatlas-base-dev libssl-dev cython python-pip python3-pip python3-dev python3-yaml python3-setuptools python-yaml libreadline-dev texinfo libusb-dev libsnappy-dev liblzma-dev python-scipy libhdf5-dev libc-ares-dev libeigen3-dev libblas-dev openjdk-8-jdk openmpi-bin libopenmpi-dev libffi-dev cmake checkinstall`  
 
 # Environment Setup  
 **Toolchain Flags**  

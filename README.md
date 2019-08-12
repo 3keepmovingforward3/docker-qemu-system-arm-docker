@@ -68,17 +68,13 @@ apt install -y sudo git wget curl bison flex gcc g++ gfortran cmake libgmp-dev l
 "Specifies which floating-point ABI to use": -mfloat-abi=hard  
 "IEEE non-compliant compiler optimizations": -Ofast;  
 "pipe output (-o) files instead of writing to disk": -pipe  
+**Pytorch ENV Variables**  
+"gnu compiler Version 9.0.x"
 ```
 export CFLAGS="-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -mfloat-abi=hard -Ofast -pipe"  
 export CXXFLAGS="-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -mfloat-abi=hard -Ofast -pipe"  
-export CC="gcc-9"  
-export CXX="g++-9"  
-export USE_CUDA=0  
-export USE_DISTRIBUTED=0  
-export USE_MKLDNN=0  
-export USE_NNPACK=0  
-export USE_QNNPACK=0  
-export MAX_JOBS=$(nproc)  
+export CC="gcc-9" && export CXX="g++-9" && export USE_CUDA=0  && export USE_DISTRIBUTED=0  
+export USE_MKLDNN=0  && export USE_NNPACK=0 && export USE_QNNPACK=0 && export MAX_JOBS=$(nproc)  
 ``` 
 
 **Example of how environment flags make there way into the gcc compilation command**  

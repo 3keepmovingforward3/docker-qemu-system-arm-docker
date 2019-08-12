@@ -68,8 +68,6 @@ apt install -y sudo git wget curl bison flex gcc g++ gfortran cmake libgmp-dev l
 "Specifies which floating-point ABI to use": -mfloat-abi=hard  
 "IEEE non-compliant compiler optimizations": -Ofast;  
 "pipe output (-o) files instead of writing to disk": -pipe  
-**Pytorch ENV Variables**  
-"gnu compiler Version 9.0.x"
 ```
 export CFLAGS="-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -mfloat-abi=hard -Ofast -pipe"  
 export CXXFLAGS="-march=armv7-a -mtune=cortex-a53 -mfpu=vfpv4 -mlittle-endian -mfloat-abi=hard -Ofast -pipe"  

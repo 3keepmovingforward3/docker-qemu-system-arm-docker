@@ -29,7 +29,15 @@ we will add a Ubuntu user-group for docker, and add the current user as group me
 groupadd docker  
 usermod -aG docker $USER  
 ```
-*Logout/login*  
+*Logout/login* 
+**Docker Command Explanations**  
+"run": runs a command in a new container; run;  
+"volume list": bind mount a volume; -v;  
+"host:container: moving files into container at creation;  
+"remove": automatically remove the container when it exits; --rm;  
+"tty": allow pseudo tty; -t  
+"interactive": keep STDIN open even if not attatched; -i  
+"image name": in this case, `arm32v7/ros:kinetic-ros-base-xenial`  
 ```
 docker run -v /usr/bin/qemu-arm-static:/usr/bin/qemu-arm-static --rm -ti arm32v7/ros:kinetic-ros-base-xenial
 ```

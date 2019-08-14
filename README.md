@@ -39,8 +39,14 @@ usermod -aG docker $USER
 "interactive": keep STDIN open even if not attatched; -i  
 "image name": in this case, `arm32v7/ros:kinetic-ros-base-xenial`  
 ```
-docker run -v /usr/bin/qemu-arm-static:/usr/bin/qemu-arm-static --rm -ti arm32v7/ros:kinetic-ros-base-xenial
+docker run -v /usr/bin/qemu-arm-static:/usr/bin/qemu-arm-static --rm -ti arm32v7/ros:kinetic-ros-base-xenial  
 ```
+**Other ways to control Docker**  
+If the `--rm` is removed, one could use a second terminal to **stop** the container. This will exit the container,  
+but it won't remove the filesystem. This is advantageous in that one wouldn't have to start over, and could pick-up developement later. Another thing that can be useful is to rename a container, so one doesn't have to refer to the container by its UUID.  
+`docker rename UUID <container name>` for instance `docker rename 389jf39jald3 dev`  
+Now we can do things like `docker stop dev` or `docker attach dev`  
+As you can see, it is much easier and more intuitive than doing everything by UUID.  
 
 # Missing Software  
 **Base-Toolchains Upgrade**  

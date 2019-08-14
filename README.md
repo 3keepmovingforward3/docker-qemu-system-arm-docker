@@ -29,7 +29,7 @@ we will add a Ubuntu user-group for docker, and add the current user as group me
 groupadd docker  
 usermod -aG docker $USER  
 ```
-*Logout/login* 
+*Logout/login*  
 **Docker Command Explanations**  
 "run": runs a command in a new container; run;  
 "volume list": bind mount a volume; -v;  

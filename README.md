@@ -94,7 +94,7 @@ export USE_MKLDNN=0  && export USE_NNPACK=0 && export USE_QNNPACK=0 && export MA
 *Flag Option Explanations*  
 "verbosity level": -v -vv -vvv; "install under user": --user; "compile from source": --no-binary all; "specific version": *==1.0.*;  
 ```
-time pip install -vv --user --no-binary all typing pyyaml future cython scipy h5py six numpy wheel mock  
+time pip install -vv --user typing pyyaml future cython scipy h5py six numpy wheel mock  
 pip install -vv --user --no-deps --no-binary all keras_applications==1.0.7 keras_preprocessing==1.0.9     
 ```
 

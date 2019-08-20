@@ -51,7 +51,7 @@ As you can see, it is much easier and more intuitive than doing everything by UU
 # Missing Software  
 **Base-Toolchains Upgrade**  
 ```
-apt update && apt install -y software-properties-common apt-utils`  
+apt update && apt install -y software-properties-common apt-utils  
 add-apt-repository && ppa:ubuntu-toolchain-r/test && apt update apt upgrade -y  
 ```
 *Latest-Toolchains*  

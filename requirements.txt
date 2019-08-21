@@ -1,5 +1,6 @@
 ###### Requirements without Version Specifiers ######
 six
+testresources
 future
 typing
 cryptography

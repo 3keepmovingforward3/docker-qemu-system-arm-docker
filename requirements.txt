@@ -16,3 +16,8 @@ h5py==2.9.0
 funcsigs
 asn1crypto
 mock
+pillow
+pandas
+requests
+urllib3
+simplejson

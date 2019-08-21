@@ -10,3 +10,6 @@ pyyaml
 pycparser
 enum34
 numpy
+keras_applications==1.0.7
+keras_preprocessing==1.0.9
+h5py==2.9.0

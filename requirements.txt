@@ -20,5 +20,3 @@ mock
 pillow
 pandas
 requests
-urllib3
-simplejson
